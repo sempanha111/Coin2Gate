@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoinApex: The crypto trading platform trusted by millions</title>
+  <link rel="icon" href="./assets/images/favicon.ico" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/jquery-3.7.1.min.js"></script>
+  <script src="assets/tailwind.js"></script>
+  <link rel="stylesheet" href="./assets/index.css" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1211799346681320');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1211799346681320&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+  <div id="showloading" class=" h-screen w-full left-0 bg-[#adadadbe] top-0 fixed duration-1000 z-50">
+    <div class=' space-x-2 justify-center flex items-center mt-[20%]'>
+      <div class='h-8  w-8 bg-black rounded-full animate-bounce [animation-delay:0s]'></div>
+      <div class='h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+      <div class='h-8 w-8 bg-black rounded-full animate-bounce'></div>
+    </div>
+  </div>
+
+  <header class=" bg-slate-950 relative  shadow-lg">
+    <div class="mx-2 sm:mx-20" id="header">
+      <div class=" flex items-center justify-between">
+        <div class="py-5   flex gap-10">
+          <a href="./index.html">
+            <h1 class="text-4xl font-medium text-white">Coin2Gate</h1>
+          </a>
+
+          <div
+            class="hidden lg:flex items-center gap-5 *:transition-all *:duration-300 *:text-2xl *:font-medium *:text-white">
+
+            <a href="#" class="hover:text-[#34C9A4]"> Buy Crypto </a>
+            <a href="#" class="hover:text-[#34C9A4]"> Price </a>
+            <a href="#" class="hover:text-[#34C9A4]"> Trade </a>
+            <a href="#" class="hover:text-[#34C9A4]"> Features </a>
+
+            <a href="#" class="hover:text-[#34C9A4] flex items-center gap-1">
+              <svg data-icon-id="icon-12px-New-daohangtiao-fill" data-icon-group="GateHeader" viewBox="0 0 12 12"
+                width="16px" height="16px" class="sc-3b0733ce-1 sc-3b0733ce-3 hIkSHe drSALU" style="display:block"
+                fill="none" color="currentColor" aria-hidden="true">
+                <g clip-path="url(#1258a4__a)">
+                  <path datafollowfill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M6 0a6 6 0 1 0 6 6V2a2 2 0 0 0-2-2H6Zm1.314 8.727h1.432l.004-5.454H7.497v.909h-.001v2.755A15.563 15.563 0 0 0 6.6 5.271L5.347 3.273H3.75v5.454h1.253V7.084c0-.887-.018-1.656-.053-2.377l.027-.008c.294.64.69 1.341 1.048 1.925l1.289 2.103Z"
+                    fill="currentColor"></path>
+                </g>
+                <defs></defs>
+                <clipPath id="1258a4__a">
+                  <path d="M0 0h12v12H0z" fill="#fff"></path>
+                </clipPath>
+              </svg>Bots
+            </a>
+            <a href="#" class="hover:text-[#34C9A4] flex items-center gap-1">
+              <svg data-icon-id="icon-12px-Hot-daohangtiao-fill" data-icon-group="GateHeader" viewBox="0 0 12 12"
+                width="16px" height="16px" class="sc-3b0733ce-1 sc-3b0733ce-3 hIkSHe drSALU "
+                style="display:block;color:#17E3A0" fill="none" color="currentColor" aria-hidden="true">
+                <g clip-path="url(#12589f__a)">
+                  <mask id="12589f__b" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="12"
+                    height="13">
+                    <path d="M0 .017h12v12H0v-12Z" fill="#fff"></path>
+                  </mask>
+                  <g mask="url(#12589f__b)">
+                    <path datafollowfill="currentColor"
+                      d="M4.815.34c-.185.6-.686 1.68-2.044 3.112-2.355 2.474-2.666 6.46.945 8.42a.56.56 0 0 0 .73-.138c.615-.656.882-1.617.802-2.884-.022-.35.13-.44.432-.202.858.677 1.417 1.716 1.417 2.841 0 .382.15.583.497.515 2.304-.458 5.11-3.828 2.086-8.765-.182-.25-.446-.25-.446.093.006.424-.042.847-.14 1.258-.07.286-.335.283-.395 0C8.322 2.873 7.274 1.415 5.554.216c-.463-.325-.632-.229-.739.124Z"
+                      fill="currentColor"></path>
+                  </g>
+                </g>
+                <defs></defs>
+                <clipPath id="12589f__a">
+                  <path d="M0 0h12v12H0z" fill="#fff"></path>
+                </clipPath>
+              </svg>Copy
+            </a>
+            <a href="#" class="hover:text-[#34C9A4]"> Institutional </a>
+            <a href="#" class="hover:text-[#34C9A4] flex items-center gap-1">
+              <svg data-icon-id="icon-12px-Hot-daohangtiao-fill" data-icon-group="GateHeader" viewBox="0 0 12 12"
+                width="16px" height="16px" class="sc-3b0733ce-1 sc-3b0733ce-3 hIkSHe drSALU "
+                style="display:block;color:#17E3A0" fill="none" color="currentColor" aria-hidden="true">
+                <g clip-path="url(#12589f__a)">
+                  <mask id="12589f__b" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="12"
+                    height="13">
+                    <path d="M0 .017h12v12H0v-12Z" fill="#fff"></path>
+                  </mask>
+                  <g mask="url(#12589f__b)">
+                    <path datafollowfill="currentColor"
+                      d="M4.815.34c-.185.6-.686 1.68-2.044 3.112-2.355 2.474-2.666 6.46.945 8.42a.56.56 0 0 0 .73-.138c.615-.656.882-1.617.802-2.884-.022-.35.13-.44.432-.202.858.677 1.417 1.716 1.417 2.841 0 .382.15.583.497.515 2.304-.458 5.11-3.828 2.086-8.765-.182-.25-.446-.25-.446.093.006.424-.042.847-.14 1.258-.07.286-.335.283-.395 0C8.322 2.873 7.274 1.415 5.554.216c-.463-.325-.632-.229-.739.124Z"
+                      fill="currentColor"></path>
+                  </g>
+                </g>
+                <defs></defs>
+                <clipPath id="12589f__a">
+                  <path d="M0 0h12v12H0z" fill="#fff"></path>
+                </clipPath>
+              </svg>Launch
+            </a>
+
+            <a href="#" class="hover:text-[#34C9A4] flex items-center gap-1">
+              <img src="./assets/images/moment-header-live.gif" alt="">Moments
+            </a>
+
+
+
+
+
+
+          </div>
+
+
+        </div>
+
+        <div class="py-5 flex items-center gap-5 text-slate-700">
+
+
+          <button onclick="url()" class="py-3 hidden lg:block  text-white   text-2xl font-semibold   transition">
+            Sign Up</button>
+          <button onclick="url()"
+            class="py-3 px-10 hidden lg:block  text-white rounded-full text-2xl font-semibold bg-blue-600 hover:bg-slate-500 transition ">
+            Sign in</button>
+
+          <div class="text-white">|</div>
+
+          <div class=" cursor-pointer  ">
+            <i class="ri-global-line text-4xl text-white hover:text-blue-700 "></i>
+          </div>
+          <div class=" cursor-pointer  ">
+            <i class="ri-moon-fill text-4xl text-white hover:text-blue-700 "></i>
+          </div>
+          <div class=" cursor-pointer  ">
+            <i class="ri-search-line text-4xl text-white hover:text-blue-700 "></i>
+          </div>
+
+
+
+          <label class="burger mr-5 lg:hidden" id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+
+        </div>
+      </div>
+
+
+
+
+      <div class="hidden" id="mobile">
+
+        <div class="p-5 flex flex-col  text-slate-500 *:text-2xl *:font-medium *:p-5">
+          <a href="#" class="hover:text-[#34C9A4]"> Buy Crypto </a>
+          <a href="#" class="hover:text-[#34C9A4]"> Markets </a>
+          <a href="#" class="hover:text-[#34C9A4]"> Trade </a>
+          <a href="#" class="hover:text-[#34C9A4]"> Derivatives </a>
+          <a href="#" class="hover:text-[#34C9A4]"> Earn </a>
+          <a href="#" class="hover:text-[#34C9A4]"> Institutional </a>
+          <a href="#" class="hover:text-[#34C9A4]"> More </a>
+          <div>
+            <button onclick="url()" class="py-3   text-white   text-2xl font-semibold   transition">
+              Sign Up</button>
+            <button onclick="url()"
+              class="py-3 px-10   text-white rounded-full text-2xl font-semibold bg-blue-600 hover:bg-slate-500 transition ">
+              Sign in</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </header>
+
+
+
+  <main class="custom">
+
+    <section class="bg-white pb-20 mb:pb-60">
+      <div class="container mx-auto max-w-screen-xl">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center mt-10 md:mt-0">
+          <div class="">
+            <div class="text-4xl md:text-7xl font-semibold mb-3">Gateway to Crypto</div>
+            <div class="text-2xl md:text-3xl font-medium mb-5">Trade over 2,100 cryptocurrencies safely, quickly, and
+              easily</div>
+            <div class="text-2xl md:text-3xl  text-gray-400 mb-5"><i class="ri-gift-fill pr-2"></i>Sign up and win up to
+              $6666 in welcome rewards</div>
+
+            <div class="md:flex items-center gap-5 mb-28">
+
+              <div class="w-full md:w-[30rem] mt-10 md:mt-0 relative">
+                <input type="email"
+                  class="w-full h-18 px-8 py-5 text-2xl text-gray-700 bg-slate-100 border-slate-100 border focus:border-blue-600 rounded-full "
+                  placeholder="Email or Phone" />
+                <button
+                  class="absolute right-0 h-18 px-8 py-5  bg-blue-600 border text-2xl rounded-full border-blue-600   text-blue-50">Sign
+                  Up</button>
+              </div>
+
+              <div class="block md:hidden mt-10">
+                <div class="w-full">
+                  <div class="flex items-center">
+                    <div class="h-[0.1px] bg-gray-300 w-full"></div>
+                    <div class="px-6 text-2xl text-gray-500">OR</div>
+                    <div class="h-[0.1px] bg-gray-300 w-full"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="h-full flex gap-5 mt-10 md:mt-0">
+                <div
+                  class="h-20 w-full md:w-20 rounded-full flex justify-center items-center bg-slate-200 cursor-pointer">
+                  <i class="ri-apple-fill text-4xl"></i>
+                </div>
+                <div
+                  class="h-20 w-full md:w-20 rounded-full flex justify-center items-center bg-slate-200 cursor-pointer">
+                  <img class="w-[2.3rem]" src="./assets/images/icons8-google.svg" alt="">
+                </div>
+                <div
+                  class="h-20 w-full md:w-20 rounded-full flex justify-center items-center bg-slate-200 cursor-pointer">
+                  <img class="w-[2.3rem]" src="./assets/images/icons8-metamask-logo-color-96.png" alt="">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 items-center gap-10">
+              <div class="*:my-1">
+                <div class="text-gray-800 text-5xl font-medium">$8.27<span class="text-3xl">B</span></div>
+                <div class="text-xl text-gray-500">24h Trading</div>
+                <div class="text-xl text-gray-500">Volume</div>
+              </div>
+              <div class="*:my-1">
+                <div class="text-gray-800 text-5xl font-medium">2000+<span class="text-3xl"></span></div>
+                <div class="text-xl text-gray-500">Cryptocurrencies</div>
+                <div class="text-xl text-gray-500">Listed</div>
+              </div>
+              <div class="*:my-1">
+                <div class="text-gray-800 text-5xl font-medium">16+<span class="text-3xl">M</span></div>
+                <div class="text-xl text-gray-500">Registered Users</div>
+                <div class="opacity-0">h</div>
+              </div>
+              <div class="*:my-1">
+                <div class="text-gray-800 text-5xl font-medium">10.52<span class="text-3xl">%</span></div>
+                <div class="text-xl text-gray-500">Simple Earn APR</div>
+                <div class="opacity-0">h</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div>
+
+            <div class="swiper" id="swiper2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img class="max-w-[50rem]" src="./assets/images/1722940392687523281_shoujiao_en_light.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img class="max-w-[50rem]" src="./assets/images/1722952725623492999_WEB_light_en.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img class="max-w-[50rem]" src="./assets/images/1721305650284950151_WEB_Light_en.png" alt="">
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <div class="border rounded-xl px-5 py-5">
+          <div class="grid grid-cols-1 md:grid-cols-2">
+
+            <div class="border-r hidden md:block">
+              <div class="flex items-center h-10 text-2xl text-gray-500 gap-2">
+                <i class="ri-notification-4-line text-gray-700 text-3xl "></i>
+                <span class=" min-w-[30rem] hover:text-blue-600 cursor-pointer transition-all truncate">08-02 Gate.io
+                  Completes SpaceCatch (CATCH) Token Swap</span>
+              </div>
+            </div>
+
+            <div class="md:border-l">
+              <div class="flex items-center justify-between h-10 text-2xl text-gray-500 gap-2">
+                <span class="pl-10  min-w-[30rem] hover:text-blue-600 cursor-pointer transition-all truncate"> Gate.io
+                  Completes Delisting and Buyback of PymeDAO (PYME)</span>
+                <i class="ri-menu-fill text-gray-700 text-3xl "></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="md:flex justify-between  items-center mt-20">
+          <div class="text-3xl md:text-6xl font-semibold mb-6">Crypto Market Today</div>
+          <div class="flex md:justify-end gap-4 md:w-[50%] inset-10">
+            <div class="rounded-full h-12 w-12 bg-slate-100 flex items-center justify-center"><i
+                class="ri-search-line text-xl mt-1"></i></div>
+            <div class="rounded-full h-12 w-[15rem] px-5 text-2xl bg-slate-100 flex items-center justify-center">All
+              Crypto Prices</div>
+          </div>
+        </div>
+
+
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 md:col-span-9">
+
+            <div class="mt-10">
+              <!-- TradingView Widget BEGIN -->
+              <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript"
+                  src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+                    {
+                      "width": "100%",
+                        "height": "550",
+                          "defaultColumn": "overview",
+                            "screener_type": "crypto_mkt",
+                              "displayCurrency": "USD",
+                                "colorTheme": "light",
+                                  "locale": "en"
+                    }
+                  </script>
+              </div>
+              <!-- TradingView Widget END -->
+            </div>
+
+          </div>
+
+          <div class="col-span-12 md:col-span-3">
+            <div class="mt-10 ">
+              <!-- TradingView Widget BEGIN -->
+              <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript"
+                  src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+                    {
+                      "colorTheme": "light",
+                        "dateRange": "1D",
+                          "exchange": "US",
+                            "showChart": false,
+                              "locale": "en",
+                                "width": "100%",
+                                  "height": "407",
+                                    "largeChartUrl": "",
+                                      "isTransparent": false,
+                                        "showSymbolLogo": true,
+                                          "showFloatingTooltip": true
+                    }
+                  </script>
+              </div>
+              <!-- TradingView Widget END -->
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="md:flex justify-between  items-center mt-20 mb-10">
+          <div class="text-3xl md:text-5xl font-semibold mb-6">Activities</div>
+          <div class="flex md:justify-end gap-4 md:w-[50%] inset-10">
+            <div class="rounded-full h-12 w-[15rem] px-5 text-2xl bg-slate-100 flex items-center justify-center">More
+              Activities</div>
+          </div>
+        </div>
+
+
+        <!-- Swiper -->
+        <div class="swiper" id="swiper1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/1722494160108031373_web-banner-en.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/172256579355911018_web_banner_en.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/1722909106216671719_pk_banner-web-en.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/1722347838426429759_weben.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/1722419011381917571_web_en.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/1722853989807513354_web_en.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/1722853669978868241_usdt_web_en.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/1721792920688504464_web_en.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img class="rounded-2xl" src="./assets/images/1722951518478010986_web_banner_en.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-next" id="swiper-button-next1"></div>
+          <div class="swiper-button-prev" id="swiper-button-prev1"></div>
+        </div>
+
+
+
+        <div class="text-3xl md:text-6xl font-semibold mb-6 mt-20">How to Get Started</div>
+
+        <div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <div class="border rounded-2xl p-10 grid grid-cols-12 md:block ">
+
+              <div class="max-w-[7rem] mb-7 row-span-2 col-span-2">
+                <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g class="72px-åå»ºè´¦å·">
+                    <g class="Group 1707481079">
+                      <g class="started-normal" fill="#262933">
+                        <path
+                          d="M32.5 25.5c-2.089 0-4-1.89-4-4.5h-3c0 4.017 3.014 7.5 7 7.5s7-3.483 7-7.5h-3c0 2.61-1.911 4.5-4 4.5Z">
+                        </path>
+                        <path clip-rule="evenodd"
+                          d="M32.5 8.5c-7.18 0-13 5.82-13 13s5.82 13 13 13 13-5.82 13-13-5.82-13-13-13Zm-10 13c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10Z"
+                          fill-rule="evenodd"></path>
+                        <path
+                          d="M13.5 50c0-7.456 6.044-13.5 13.5-13.5h5v3h-5c-5.799 0-10.5 4.701-10.5 10.5v8.5h14.47v3H13.5V50Z">
+                        </path>
+                        <path clip-rule="evenodd"
+                          d="M44.5 36.5c-7.18 0-13 5.82-13 13s5.82 13 13 13 13-5.82 13-13-5.82-13-13-13Zm-10 13c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10Z"
+                          fill-rule="evenodd"></path>
+                      </g>
+                      <path class="started-brand"
+                        d="M40.222 51.778h6.722a.611.611 0 1 0 0-1.222h-4.888a3.056 3.056 0 1 1 0-6.111h1.222V42h2.444v2.444h3.056v2.445h-6.722a.611.611 0 1 0 0 1.222h4.888a3.056 3.056 0 1 1 0 6.111h-1.222v2.445h-2.444v-2.445h-3.056v-2.444Z"
+                        fill="#2354E6"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="col-span-10">
+                <div class="text-5xl  text-gray-700 mb-4">01. Create Account</div>
+                <p class="mb-5">Sign up and complete beginner tasks, win up to $6666</p>
+              </div>
+
+              <button onclick="url()"
+                class="py-3 px-10  col-span-12 text-white rounded-full text-2xl font-semibold bg-blue-600 hover:bg-slate-500 transition ">
+                Sign in</button>
+
+
+            </div>
+
+            <div class="border rounded-2xl p-10 grid grid-cols-12 md:block ">
+
+              <div class="max-w-[7rem] mb-7 col-span-2 row-span-2">
+                <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g class="72px-å¥é">
+                    <g class="Group 1707481077">
+                      <path class="started-brand"
+                        d="M29.115 23.17 25.8 21.963l3.192-8.77 3.317 1.207.798-2.193 2.21.805-.797 2.193 1.105.402a2.96 2.96 0 0 1 1.304.938c.34.427.553.938.617 1.477a2.895 2.895 0 0 1-1.306 2.775 2.903 2.903 0 0 1-.784 2.965 2.926 2.926 0 0 1-1.421.735 2.96 2.96 0 0 1-1.602-.12l-1.106-.402-.798 2.193-2.21-.805.797-2.192Zm.092-3.69-.4 1.095 4.423 1.61a.591.591 0 0 0 .45-.018.58.58 0 0 0-.051-1.078l-4.422-1.61Zm1.197-3.29-.399 1.096 4.422 1.61a.59.59 0 0 0 .45-.018.581.581 0 0 0-.05-1.078l-4.423-1.61Z"
+                        fill="#2354E6"></path>
+                      <g class="started-normal" fill="#262933">
+                        <path
+                          d="M31.97 8.5c-6.221 0-11.265 5.043-11.265 11.265 0 1.498.293 2.928.823 4.235h-3.184a14.258 14.258 0 0 1-.639-4.235c0-7.878 6.387-14.265 14.265-14.265 7.878 0 14.265 6.387 14.265 14.265a14.24 14.24 0 0 1-.64 4.235h-3.183c.53-1.307.823-2.737.823-4.235C43.235 13.543 38.19 8.5 31.97 8.5ZM45.5 48a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z">
+                        </path>
+                        <path clip-rule="evenodd"
+                          d="M59 34a8 8 0 0 0-8-8H13v38h38a8 8 0 0 0 8-8V34Zm-43-5h35a5 5 0 0 1 5 5v3H45.5a8.5 8.5 0 0 0 0 17H56v2a5 5 0 0 1-5 5H16V29Zm29.5 11H56v11H45.5a5.5 5.5 0 1 1 0-11Z"
+                          fill-rule="evenodd"></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="col-span-10">
+                <div class="text-5xl  text-gray-700 mb-4">02. Fund Your Account</div>
+                <p class="mb-5">Add funds to your account to start your crypto investment journey.</p>
+              </div>
+
+              <div class="flex gap-5 col-span-12">
+
+                <button onclick="url()"
+                  class="py-3 px-2  w-full text-white rounded-full text-2xl font-semibold bg-blue-600 hover:bg-slate-500 transition ">
+                  Deposit Crypto</button>
+                <button onclick="url()"
+                  class="py-2 px-2  w-full  text-white rounded-full text-2xl font-semibold bg-blue-600 hover:bg-slate-500 transition ">
+                  Buy Crypto</button>
+              </div>
+
+
+            </div>
+
+            <div class="border rounded-2xl p-10 grid grid-cols-12 md:block items-center">
+
+              <div class="max-w-[7rem] mb-7 row-span-2 col-span-2">
+                <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g class="72px-å¼å§äº¤æ">
+                    <g class="Group 1707481075">
+                      <path class="started-brand"
+                        d="m32.22 31.53-4.945-1.8 4.759-13.075 4.944 1.8 1.19-3.27 3.296 1.2-1.19 3.27 1.649.599a4.412 4.412 0 0 1 1.944 1.399c.506.636.824 1.398.92 2.201a4.317 4.317 0 0 1-1.947 4.137 4.317 4.317 0 0 1-1.168 4.42 4.362 4.362 0 0 1-2.12 1.097c-.796.162-1.623.1-2.388-.178l-1.648-.6-1.19 3.269-3.297-1.2 1.19-3.27Zm.136-5.503-.595 1.634 6.592 2.4c.22.08.46.07.67-.028a.866.866 0 0 0 .421-1.155.88.88 0 0 0-.496-.452l-6.592-2.4Zm1.784-4.904-.595 1.635 6.593 2.4c.219.079.46.069.67-.028a.866.866 0 0 0 .42-1.156.881.881 0 0 0-.495-.451l-6.593-2.4Z"
+                        fill="#2354E6"></path>
+                      <g class="started-normal" fill="#262933">
+                        <path
+                          d="M36 7.5c-10.217 0-18.5 8.283-18.5 18.5a18.46 18.46 0 0 0 6.521 14.099c-1.23.242-2.398.52-3.492.83A21.429 21.429 0 0 1 14.5 26c0-11.874 9.626-21.5 21.5-21.5S57.5 14.126 57.5 26c0 5.8-2.296 11.063-6.029 14.93a43.75 43.75 0 0 0-3.492-.831A18.46 18.46 0 0 0 54.5 26c0-10.217-8.283-18.5-18.5-18.5Z">
+                        </path>
+                        <path clip-rule="evenodd"
+                          d="M22.952 43.297c3.43-.847 8.09-1.355 13.182-1.355 5.092 0 9.752.508 13.182 1.355 1.704.42 3.188.944 4.283 1.583.989.576 2.17 1.552 2.17 3.037 0 1.485-1.181 2.46-2.17 3.037-1.095.64-2.58 1.163-4.283 1.583-3.43.847-8.09 1.355-13.182 1.355-5.092 0-9.752-.508-13.182-1.355-1.703-.42-3.188-.944-4.283-1.583-.989-.576-2.169-1.552-2.169-3.037 0-1.485 1.18-2.46 2.17-3.037 1.094-.64 2.579-1.163 4.282-1.583Zm-3.38 4.62c.089.094.266.246.609.446.74.432 1.912.872 3.49 1.262 3.133.773 7.54 1.267 12.463 1.267 4.923 0 9.33-.494 12.464-1.267 1.578-.39 2.749-.83 3.49-1.262.343-.2.52-.352.608-.446-.088-.093-.265-.246-.609-.446-.74-.432-1.911-.872-3.49-1.262-3.133-.773-7.54-1.267-12.463-1.267-4.923 0-9.33.494-12.463 1.267-1.578.39-2.75.83-3.49 1.262-.343.2-.52.353-.61.446Z"
+                          fill-rule="evenodd"></path>
+                        <path
+                          d="M36.134 57.542c-4.928 0-9.341-.468-12.481-1.202-1.582-.37-2.758-.789-3.502-1.2-.373-.206-.568-.373-.654-.47a.366.366 0 0 1-.034-.044.36.36 0 0 1 .037.177h-3c0 .756.334 1.379.74 1.842.397.453.914.82 1.46 1.12 1.09.604 2.57 1.099 4.27 1.496 3.423.8 8.077 1.28 13.164 1.28 5.088 0 9.741-.48 13.164-1.28 1.7-.397 3.18-.892 4.27-1.495.546-.302 1.064-.667 1.46-1.12.406-.464.74-1.087.74-1.843h-3c0-.112.035-.172.037-.176a.384.384 0 0 1-.034.042c-.086.099-.28.265-.653.471-.744.411-1.92.83-3.503 1.2-3.14.734-7.553 1.202-12.48 1.202Zm0 6.857c-4.909 0-9.297-.57-12.41-1.46-1.567-.447-2.727-.952-3.46-1.447-.363-.246-.57-.454-.676-.603a.604.604 0 0 1-.088-.167v-.004h-3c0 1.476 1.035 2.55 2.085 3.26 1.103.744 2.6 1.356 4.314 1.846 3.45.985 8.129 1.575 13.235 1.575s9.785-.59 13.235-1.575c1.715-.49 3.211-1.102 4.314-1.846 1.05-.71 2.085-1.784 2.085-3.26h-3v.004a.604.604 0 0 1-.087.166c-.107.15-.314.358-.677.604-.733.495-1.892 1-3.46 1.447-3.113.89-7.5 1.46-12.41 1.46Z">
+                        </path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="col-span-10">
+                <div class="text-5xl  text-gray-700 mb-4">03. Start Trading</div>
+                <p class="mb-5">Sell, buy or copy trade crypto and explore more.</p>
+              </div>
+
+              <button onclick="url()"
+                class="py-3 px-10 col-span-12   text-white rounded-full text-2xl font-semibold bg-blue-600 hover:bg-slate-500 transition ">
+                Trade</button>
+
+
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+    </section>
+
+    <section class="bg-black py-20">
+
+      <div class="container mx-auto max-w-screen-xl">
+        <div class="border rounded-full p-1 md:w-fit overflow-hidden   ">
+          <div class="flex overflow-hidden *:min-w-fit *:text-center">
+            <div class="text-slate-800 text-2xl hover:text-slate-200 bg-white rounded-full px-8 py-2 ">Startup</div>
+            <div class="text-slate-400 text-2xl hover:text-slate-200   px-8 py-2">Sport</div>
+            <div class="text-slate-400 text-2xl hover:text-slate-200   px-8 py-2">Derivatives</div>
+            <div class="text-slate-400 text-2xl hover:text-slate-200   px-8 py-2">Finance</div>
+            <div class="text-slate-400 text-2xl hover:text-slate-200   px-8 py-2">Moments</div>
+            <div class="text-slate-400 text-2xl hover:text-slate-200   px-8 py-2">Copy Trading</div>
+            <div class="text-slate-400 text-2xl hover:text-slate-200   px-8 py-2">Web3</div>
+            <div class="text-slate-400 text-2xl hover:text-slate-200   px-8 py-2">Gate Pay</div>
+
+
+          </div>
+        </div>
+
+        <div class="grid grid-cols-12 gap-10 mt-32">
+
+          <div class="*:my-5 col-span-full md:col-span-5">
+            <div class="text-white text-4xl md:text-7xl font-semibold pb-3">Startup</div>
+            <div class="text-3xl md:text-4xl text-gray-500 pb-3">Launchpad for new crypto projects. Be the earliest to receive
+              crypto
+              airdrops via Gate Startup</div>
+            <div class="grid grid-cols-12 p-6 rounded-2xl bg-[#1F1F1F]">
+
+
+              <div class="text-white text-3xl font-semibold col-span-full pb-2">ATH ROI</div>
+
+
+              <div class="*:my-2 col-span-4 md:col-span-6">
+                <div class="text-green-400 text-3xl md:text-5xl font-semibold">8833.8%</div>
+                <div class="text-gray-500 text-xl md:text-2xl">PixeVerse(PIXEL)</div>
+              </div>
+
+              <div class="*:my-2 col-span-4 md:col-span-6">
+                <div class="text-green-400 text-3xl md:text-5xl font-semibold">8833.8%</div>
+                <div class="text-gray-500 text-xl md:text-2xl">PixeVerse(PIXEL)</div>
+              </div>
+
+              <div class="*:my-2 col-span-4 md:col-span-12">
+                <div class="text-green-400 text-3xl md:text-5xl font-semibold">8833.8%</div>
+                <div class="text-gray-500 text-xl md:text-2xl">PixeVerse(PIXEL)</div>
+              </div>
+
+
+
+            </div>
+          </div>
+
+          <div class="col-span-full md:col-span-7  order-first md:order-none">
+            <!-- Swiper -->
+            <div class="text-white max-w-[33rem] md:max-w-[38rem] mx-auto">
+              <div class="swiper" id="swiper3">
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                    <div class="rounded-2xl border-[0.1px] border-gray-900  ">
+                      <img class="rounded-t-2xl w-full" src="./assets/images/1722860278799171353904.jpeg" alt="">
+
+                      <div class="bg-[#2D313D] py-2 rounded-b-2xl">
+                        <div class="text-green-400 text-3xl font-bold w-fit mx-auto">
+                          <i class="ri-time-fill"></i>
+                          <span>Finished</span>
+                        </div>
+                      </div>
+
+                      <div class="p-8 bg-black rounded-b-2xl">
+
+                        <div class="text-white bg-blue-900 text-2xl py-1 px-3 w-fit rounded-sm mt-10">NONINITIAL</div>
+                        <div class="text-white font-medium text-5xl mt-10">CatDog</div>
+
+                        <div class="bg-gray-900 p-5 mt-3 rounded-2xl *:my-3 grid grid-cols-12">
+
+                          <div class="text-5xl font-semibold col-span-full">52,640 <span   class="text-3xl font-medium text-gray-500">Supporters</span></div>
+                          <div class="text-4xl font-medium col-span-7">3,112,193<span   class="text-3xl font-medium text-gray-500">/5000 GT</span></div>
+                          <div class="text-3xl font-medium col-span-5 text-blue-500 text-right">6987.56%</div>
+
+                          <div class='w-full  col-span-full rounded-3xl h-3 pt-3'>
+                            <div
+                              class='bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% h-2.5 rounded-3xl'
+                              style='width: 100%'></div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                    </div>
+                  </div>
+                 
+                  <div class="swiper-slide">
+                    <div class="rounded-2xl border-[0.1px] border-gray-900  ">
+                      <img class="rounded-t-2xl w-full" src="./assets/images/1722503603507183036904.jpeg" alt="">
+                      <div class="bg-[#2D313D] py-2 rounded-b-2xl">
+                        <div class="text-green-400 text-3xl font-bold w-fit mx-auto">
+                          <i class="ri-time-fill"></i>
+                          <span>Finished</span>
+                        </div>
+                      </div>
+
+                      <div class="p-8 bg-black rounded-b-2xl">
+
+                        <div class="text-white bg-blue-900 text-2xl py-1 px-3 w-fit rounded-sm mt-10">INITIAL</div>
+                        <div class="text-white font-medium text-5xl mt-10">Mirada AI</div>
+
+                        <div class="bg-gray-900 p-5 mt-3 rounded-2xl *:my-3 grid grid-cols-12">
+
+                          <div class="text-5xl font-semibold col-span-full">62,873 <span   class="text-3xl font-medium text-gray-500">Supporters</span></div>
+                          <div class="text-4xl font-medium col-span-7">79,522,376<span   class="text-3xl font-medium text-gray-500">/7000  USDT</span></div>
+                          <div class="text-3xl font-medium col-span-5 text-blue-500 text-right">113603.39%</div>
+
+                          <div class='w-full  col-span-full rounded-3xl h-3 pt-3'>
+                            <div
+                              class='bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% h-2.5 rounded-3xl'
+                              style='width: 100%'></div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                    </div>
+                  </div>
+                 
+                  <div class="swiper-slide">
+                    <div class="rounded-2xl border-[0.1px] border-gray-900  ">
+                      <img class="rounded-t-2xl w-full" src="./assets/images/1723009515993420092904.jpeg" alt="">
+                      <div class="bg-[#2D313D] py-2 rounded-b-2xl">
+                        <div class="text-green-400 text-3xl font-bold w-fit mx-auto">
+                          <i class="ri-time-fill"></i>
+                          <span>Finished</span>
+                        </div>
+                      </div>
+
+                      <div class="p-8 bg-black rounded-b-2xl">
+
+                        <div class="text-white bg-blue-900 text-2xl py-1 px-3 w-fit rounded-sm mt-10">INITIAL</div>
+                        <div class="text-white font-medium text-5xl mt-10">NeurochainAI</div>
+
+                        <div class="bg-gray-900 p-5 mt-3 rounded-2xl *:my-3 grid grid-cols-12">
+
+                          <div class="text-5xl font-semibold col-span-full">37,527 <span   class="text-3xl font-medium text-gray-500">Supporters</span></div>
+                          <div class="text-4xl font-medium col-span-7">1,558,581<span   class="text-3xl font-medium text-gray-500">/5000 GT</span></div>
+                          <div class="text-3xl font-medium col-span-5 text-blue-500 text-right">31171.62%</div>
+
+                          <div class='w-full  col-span-full rounded-3xl h-3 pt-3'>
+                            <div
+                              class='bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% h-2.5 rounded-3xl'
+                              style='width: 100%'></div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                    </div>
+                  </div>
+                 
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <div class=" py-20 max-w-[1280px] mx-auto space-y-8">
+        <div class="text-3xl md:text-5xl font-semibold mb-6">Activities</div>
+   
+
+      <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-4 lg:gap-8">
+
+       <div class=" border rounded-xl shadow w-full h-full p-4 md:p-5 lg:p-5 space-y-5 duration-500 xl:hover:-translate-y-2">
+           <div class=" space-y-3">
+               <img src="./assets/images/crypto2.webp" class=" rounded" alt="">
+              
+           </div>
+           <div>
+               <p class=" text-center text-gray-400">
+                   Bitcoin is the cornerstone of the crypto market, not just due to its market cap but also its incredible maturity and complexity. It has long captured the interest of institutional and sophisticated investors due to the abundance of financial derivatives products it offers.
+               </p>
+           </div>
+       </div>
+
+       <div class=" border rounded-xl shadow w-full h-full p-4 md:p-5 lg:p-5 space-y-5 duration-500 xl:hover:-translate-y-2">
+           <div class=" space-y-3">
+               <img src="./assets/images/binancoin1.webp" class=" rounded" alt="">
+           </div>
+           <div>
+               <p class=" text-center text-gray-400">
+                   As 2023 comes to an end, the cryptocurrency market is celebrating another remarkable year of growth and innovation. Among the top performers, bitcoin stands out as the undisputed leader of the pack ...
+               </p>
+           </div>
+       </div>
+
+       <div class=" border rounded-xl shadow w-full h-full p-4 md:p-5 lg:p-5 space-y-5 duration-500 xl:hover:-translate-y-2">
+           <div class=" space-y-3">
+               <img src="./assets/images/binancoin2.jpg" class=" rounded" alt="">
+              
+           </div>
+           <div>
+               <p class=" text-center text-gray-400">
+                   A green jump has taken over the crypto market as Bitcoin stands stronger at US $23K according to our list of top 10 cryptocurrencies on February 02 2023.
+               </p>
+           </div>
+       </div>
+
+       <div class=" border rounded-xl shadow w-full h-full p-4 md:p-5 lg:p-5 space-y-5 duration-500 xl:hover:-translate-y-2">
+           <div class=" space-y-3">
+               <img src="./assets/images/binancoin3.webp" class=" rounded" alt="">
+              
+           </div>
+           <div>
+               <p class=" text-center text-gray-400">
+                   CryptoSlate breaks down Bitcoin's movements against the Argentine Peso, Nigerian Naira, and Turkish Lira, showcasing how each currency's tumultuous tale fuels Bitcoin's ascent. But what exactly is ...
+               </p>
+           </div>
+       </div>
+
+
+       <div class=" border rounded-xl shadow w-full h-full p-4 md:p-5 lg:p-5 space-y-5 duration-500 xl:hover:-translate-y-2">
+           <div class=" space-y-3">
+               <img src="./assets/images/crypto4.jpg" class=" rounded" alt="">
+              
+           </div>
+           <div>
+               <p class=" text-center text-gray-400">
+                   After a long struggle for equality, it’s no longer controversial in the United States that women are owed equal rights, equal dignity, equal protection of the law, and the same ... 
+               </p>
+           </div>
+       </div>
+
+       <div class=" border rounded-xl shadow w-full h-full p-4 md:p-5 lg:p-5 space-y-5 duration-500 xl:hover:-translate-y-2">
+           <div class=" space-y-3">
+               <img src="./assets/images/binancoin5.webp" class=" rounded" alt="">
+              
+           </div>
+           <div>
+               <p class=" text-center text-gray-400">
+                   Bitcoin at the time of writing is down by 5.27% to $31,737.38, heralding a bearish dip that other digital cryptocurrencies are trailing. Over the past 24 hours, Bitcoin has lost as much as $1,668 and remarkably the biggest loser by value amongst the top ...
+               </p>
+           </div>
+       </div>
+
+    
+      </div>
+   </div>
+
+
+
+
+  </main>
+
+
+
+  <footer class="pt-20  bg-[#0C0C0F] py-10 md:py-20 custom " id="footer">
+    <div class="container mx-auto max-w-screen-xl">
+
+
+
+
+      <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 text-slate-500">
+        <div class="*:my-5">
+          <h3 class="text-slate-300">Features</h3>
+          <div class="*:my-2 flex flex-col">
+            <a href="" class=" text-whit text-2xl hover:text-[#9B6EF8]">NFT Marketplace</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Margin Trading</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Futures Trading</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">OTC Trading</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Institutions</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">API Trading</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Staking Rewards</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">All features</a>
+          </div>
+        </div>
+
+        <div class="*:my-5">
+          <h3 class="text-slate-300">Browse Prices</h3>
+          <div class="*:my-2 flex flex-col">
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Bitcoin Price</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Ethereum Price</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Dogecoin Price</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">XRP Price</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Cardano Prices</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Solana Price</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Litecoin Price</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">All crypto prices</a>
+          </div>
+        </div>
+
+        <div class="*:my-5">
+          <h3 class="text-slate-300">Buying Guides</h3>
+          <div class="*:my-2 flex flex-col">
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Buy Bitcoin</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Buy Ethereum</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Buy Dogecoin</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Buy XRP</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Buy Cardano</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Buy Solana</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Buy Litecoin</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">All crypto guides</a>
+          </div>
+        </div>
+
+        <div class="*:my-5">
+          <h3 class="text-slate-300">Company</h3>
+          <div class="*:my-2 flex flex-col">
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Kraken Security</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Kraken Careers</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Kraken Blog</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Press Room</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Affiliate Program</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Asset Listings</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Kraken Status</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Support Center</a>
+          </div>
+        </div>
+
+        <div class="*:my-5">
+          <h3 class="text-slate-300">Popular Markets
+          </h3>
+          <div class="*:my-2 flex flex-col">
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">BTC to USD</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">ETH to USD</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">DOGE to USD</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">XRP to USD</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">ADA to USD</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">SOL to USD</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">LTC to USD</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">All crypto markets</a>
+          </div>
+        </div>
+
+        <div class="*:my-5">
+          <h3 class="text-slate-300">Crypto Education</h3>
+          <div class="*:my-2 flex flex-col">
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">What is cryptocurrency?</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Types of cryptocurrency</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">What is a blockchain?</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">What is Bitcoin?</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">What is Ethereum?</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">What is an NFT?</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">What is a DAO?</a>
+            <a href="" class=" text-2xl hover:text-[#9B6EF8]">Learn crypto</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <hr class="border-t-[0.1px] opacity-10 mt-20 border-slate-800">
+      <div class="flex *:text-slate-700 flex-wrap *:text-xl gap-10 py-7">
+        <div>© 2011 - 2024 Payward, Inc.</div>
+        <div class="underline">Privacy Notice</div>
+        <div class="underline">Terms of Service</div>
+        <div class="underline">Cookie Settings</div>
+        <div class="underline">Disclosures</div>
+      </div>
+      <hr class="border-t-[0.1px] opacity-10  border-slate-800">
+
+
+      <div class="text-xl text-slate-700 py-10">These materials are for general information purposes only and are not
+        investment advice or a recommendation or solicitation to buy, sell, stake or hold any cryptoasset or to engage
+        in any specific trading strategy. Kraken does not and will not work to increase or decrease the price of any
+        particular cryptoasset it makes available. Some crypto products and markets are unregulated, and you may not be
+        protected by government compensation and/or regulatory protection schemes. The unpredictable nature of the
+        crypto-asset markets can lead to loss of funds. Tax may be payable on any return and/or on any increase in the
+        value of your cryptoassets and you should seek independent advice on your taxation position. Geographic
+        restrictions may apply.</div>
+
+
+    </div>
+
+  </footer>
+  <div id="backtotop"></div>
+
+  <script src="./assets/javascript.js"></script>
+
+  <script>
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
